@@ -35,6 +35,7 @@ gem 'popper_js', '~> 2.9.2'
 gem 'figaro'
 gem 'sassc'
 gem 'uglifier'
+gem 'simple_form'
 
 
 # Reduces boot times through caching; required in config/boot.rb
