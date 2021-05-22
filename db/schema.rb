@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2021_05_21_201628) do
   enable_extension "plpgsql"
 
   create_table "GroupExpenses", force: :cascade do |t|
-    t.bigint "group_id"
-    t.bigint "expense_id"
+    t.bigint "group_id", null: false
+    t.bigint "expense_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["expense_id"], name: "index_GroupExpenses_on_expense_id"
@@ -77,10 +77,10 @@ ActiveRecord::Schema.define(version: 2021_05_21_201628) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "username"
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "GroupExpenses", "expenses"

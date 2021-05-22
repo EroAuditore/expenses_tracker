@@ -12,7 +12,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @expense.user_id %>
+  <%= @expense.author.name %>
 </p>
 
 <%= link_to 'Edit', edit_expense_path(@expense) %> |
