@@ -55,10 +55,12 @@ ActiveRecord::Schema.define(version: 2021_05_21_201628) do
   create_table "expenses", force: :cascade do |t|
     t.string "name"
     t.decimal "amount"
+    t.bigint "group_id"
     t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_id"], name: "index_expenses_on_author_id"
+    t.index ["group_id"], name: "index_expenses_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
