@@ -1,18 +1,75 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ExpensesTracker</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Expenses tracker</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      feather.replace()
+        console.log("DOM fully loaded and parsed");
+    });
+      
+    </script>
   </head>
 
   <body>
-      <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-    <%= yield %>
+ <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Expense tracker</a>
+ 
+   <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Sign out</a>
+    </li>
+  </ul>
+   <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</header>
+  <div class="container-fluid">
+    <div class="row">
+    
+
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+           
+             <%= link_to expenses_path, class: 'nav-link active' do %>
+              <span data-feather="home"></span>
+                All my expenses
+            <% end%>
+          </li>
+          <li class="nav-item">
+             <%= link_to expenses_path, class: 'nav-link' do %>
+              <span data-feather="file"></span>
+                All my external expenses
+            <% end%>
+          
+          </li>
+         
+          <li class="nav-item">
+          <%= link_to expenses_path, class: 'nav-link' do %>
+              <span data-feather="users"></span>
+                All my groups
+            <% end%>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <%= yield %>
+    </main>
+    </div>
+  </div>
+  
   </body>
 </html>
