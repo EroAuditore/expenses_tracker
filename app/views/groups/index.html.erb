@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Groups asdsadkl</h1>
+
+<h1>Groups</h1>
+
+
 
 <table>
   <thead>
@@ -23,6 +26,16 @@
     <% end %>
   </tbody>
 </table>
+<article>
+  <h3>
+    Recent groups
+  </h3>
+  <ul class="list-unstyled"> 
+     
+    <%= render partial: 'groups/card'%>
+   
+  </ul>
+</article>
 
 <br>
 
