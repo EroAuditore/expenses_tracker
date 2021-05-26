@@ -1,31 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Expenses</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @expenses.each do |expense| %>
-      <tr>
-        <td><%= expense.name %></td>
-        <td><%= expense.amount %></td>
-        <td><%= expense.author.name %></td>
-        <td><%= link_to 'Show', expense %></td>
-        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<article>
+  <h3>
+    Expenses
+  </h3>
+  
+  <div class="row mb-4">
+  <div class="card">
+    <div class="row ">
+      <div class="col-6">Total:</div>
+      <div class="col-6">Amout</div>
+    </div>
+  </div>
+    
+  </div>
+  <ul class="list-unstyled"> 
+    <%= render partial: 'expenses/card'%>
+  </ul>
+</article>
 
 <br>
 
-<%= link_to 'New Expense', new_expense_path %>
+<%= link_to 'New Expense', new_expense_path, class: "btn btn-success" %>

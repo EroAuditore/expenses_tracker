@@ -1,0 +1,35 @@
+<% @expenses.each do |expense| %> 
+<li>
+<div class="card mb-3">
+  <div class="row g-0 d-flex">
+    <div class="col-4">
+      <%= image_tag expense.group.image, style: "width:100%" %>
+    </div>
+    <div class="col-8">
+      <div class="card-body">
+      
+        <div class="row">
+            <div class="col-6"><%= expense.name %></div>
+            <div class="col-6 card-title"><h6 class="card-title"> <%= number_to_currency(expense.amount) %></h6></div>
+            
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p class="card-text"><small class="text-muted"><%= expense.created_at.strftime("%Y/%m/%d") %></small></p>
+            </div>
+            <div class="col-6">
+                <p class="card-text"><small class="text-muted"><%= expense.author.name %></small></p>
+            </div>
+        </div>
+        
+        
+        <%= link_to 'Show', expense %>
+        <%= link_to 'Edit', edit_expense_path(expense) %>
+        <%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %>
+     
+      </div>
+    </div>
+  </div>
+</div>
+</li>
+<% end %>
