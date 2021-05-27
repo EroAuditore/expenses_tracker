@@ -7,11 +7,29 @@
 
   <%= image_tag @group.image, style: "width:200px" %>
 
-
 <p>
   <strong>User:</strong>
   <%= @group.user_id %>
 </p>
+
+<article>
+  <h3>
+    Expenses
+  </h3>
+  
+  <div class="row mb-4">
+  <div class="card">
+    <div class="row ">
+      <div class="col-6"><h5 class="card-title"> Total: </h5></div>
+      <div class="col-6"><h5 class="card-title"> <%= number_to_currency(Expense.calculate(:sum, :amount)) %></h5></div>
+    </div>
+  </div>
+    
+  </div>
+  <ul class="list-unstyled"> 
+    <%= render partial: 'expenses/card'%>
+  </ul>
+</article>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>

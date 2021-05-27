@@ -57,6 +57,13 @@ class ExpensesController < ApplicationController
     end
   end
 
+  # GET /expenses or /expenses.json
+  def external
+    @expenses = Expense.external
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_expense

@@ -1,0 +1,16 @@
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Expense tracker</a>
+ 
+   <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+     <% if user_signed_in? %>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+       <% else %>
+        <%= link_to 'Sign In', new_user_session_path, class: "nav-link" %>
+    <% end %>
+    </li>
+  </ul>
+   <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</header>

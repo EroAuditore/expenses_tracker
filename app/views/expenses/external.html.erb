@@ -10,7 +10,7 @@
   <div class="card">
     <div class="row ">
       <div class="col-6"><h5 class="card-title"> Total: </h5></div>
-      <div class="col-6"><h5 class="card-title"> <%= number_to_currency(Expense.calculate(:sum, :amount)) %></h5></div>
+      <div class="col-6"><h5 class="card-title"> <%= number_to_currency(Expense.external.calculate(:sum, :amount)) %></h5></div>
     </div>
   </div>
     
