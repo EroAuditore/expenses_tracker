@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
+    @expenses = Group.find(params[:id]).expenses
   end
 
   # GET /groups/new
@@ -22,7 +23,7 @@ class GroupsController < ApplicationController
   # POST /groups or /groups.json
   def create
     @group =  current_user.groups.new(group_params)
-    #@gruop.user_id = current_user.id
+    
 
     respond_to do |format|
       if @group.save
