@@ -22,12 +22,12 @@
                 <p class="card-text"><small class="text-muted"><%= expense.author.name %></small></p>
             </div>
         </div>
-        
-        
-        <%= link_to 'Show', expense %>
-        <%= link_to 'Edit', edit_expense_path(expense) %>
-        <%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <div class="btn-group" role="group" >
+          <%= link_to 'Show', expense, class: "btn btn-outline-primary" %>
+          <%= link_to 'Edit', edit_expense_path(expense), class: "btn btn-outline-primary" %>
+          <%= link_to 'Destroy', expense,class: "btn btn-outline-primary", method: :delete, data: { confirm: 'Are you sure?' } %>
      
+        </div>
       </div>
     </div>
   </div>
