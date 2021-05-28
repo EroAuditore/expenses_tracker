@@ -1,27 +1,39 @@
 <p id="notice"><%= notice %></p>
+<div class="card mb-3">
+  <div class="row g-0 d-flex">
+    <div class="col-4">
+      <%= image_tag @group.image, style: "width:100%" %>
+    </div>
+    <div class="col-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= @group.name %></h5>
+        <p class="card-text"><%= @group.user.name %></p>
+        <p class="card-text"><small class="text-muted"><%= @group.created_at.strftime("%Y/%m/%d") %></small></p>
+       
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
-
-  <%= image_tag @group.image, style: "width:200px" %>
-
-<p>
-  <strong>User:</strong>
-  <%= @group.user_id %>
-</p>
 
 <article>
   <h3>
     Expenses
   </h3>
+
   
   <div class="row mb-4">
   <div class="card">
     <div class="row ">
-      <div class="col-6"><h5 class="card-title"> Total: </h5></div>
-      <div class="col-6"><h5 class="card-title"> <%= number_to_currency(@expenses.calculate(:sum, :amount)) %></h5></div>
+      <div class="col-5"><h5 class="card-title"> Total: </h5></div>
+      <div class="col-5"><h5 class="card-title"> <%= number_to_currency(@expenses.calculate(:sum, :amount)) %></h5></div>
+      <div class="col-2"><%= link_to "Export group as spreadsheet", download_groups_path(format: "xlsx"), data: {turbolinks: false} %> <br>
+        <%=
+            link_to 'Download as Excel',
+            download_groups_path(format: :xlsx),
+            data: {turbolinks: false}
+          %>
+      </div>
     </div>
   </div>
     

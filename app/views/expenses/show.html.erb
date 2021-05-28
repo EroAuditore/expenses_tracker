@@ -1,19 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @expense.name %>
-</p>
+<div class="card mb-3">
+  <div class="row g-0 d-flex">
+    <div class="col-4">
+      <%= render_image(@expense)%>
+    </div>
+    <div class="col-8">
+      <div class="card-body">
+        <div class="row">
+            <div class="col-6"><%= @expense.name %></div>
+            <div class="col-6 card-title"><h6 class="card-title"> <%= number_to_currency(@expense.amount) %></h6></div>
+        </div>
+        <div class="row">
+            <div class="col-5">
+                <p class="card-text"><small class="text-muted"><%= @expense.created_at.strftime("%Y/%m/%d") %></small></p>
+            </div>
+            <div class="col-5">
+                <p class="card-text"><small class="text-muted"><%= @expense.author.name %></small></p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @expense.amount %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @expense.author.name %>
-</p>
 
 <%= link_to 'Edit', edit_expense_path(@expense) %> |
 <%= link_to 'Back', expenses_path %>

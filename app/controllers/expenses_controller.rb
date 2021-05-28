@@ -60,6 +60,14 @@ class ExpensesController < ApplicationController
   def external
     @expenses = Expense.external
   end
+  #down load xlsx file
+
+  def download
+    @expenses_d = Expense.all.order("created_at desc")
+    respond_to do |format|
+      format.xlsx
+    end
+  end
 
   private
 
@@ -67,7 +75,7 @@ class ExpensesController < ApplicationController
   def set_expense
     @expense = Expense.find(params[:id])
   end
-
+  
   # Only allow a list of trusted parameters through.
   def expense_params
     params.require(:expense).permit(:name, :amount, :user_id, :group_id)

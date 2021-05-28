@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   root 'expenses#index'
   devise_for :users
-  resources :groups
+
+  resources :groups do
+    get 'download', :on => :collection
+  end
 
   resources :expenses do
     get 'external', :on => :collection
-
+    get 'download', :on => :collection
   end
   
   

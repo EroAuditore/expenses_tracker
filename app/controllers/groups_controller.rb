@@ -57,6 +57,15 @@ class GroupsController < ApplicationController
     end
   end
 
+  #down load xlsx file
+
+  def download
+    @expenses_d = Expense.all.order("created_at desc")
+    respond_to do |format|
+      format.xlsx
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
