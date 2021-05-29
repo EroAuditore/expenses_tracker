@@ -26,13 +26,14 @@ RSpec.describe 'Expense creation', type: :system do
     within '.form-inputs' do
         fill_in 'expense_name', with: 'Test expense'
         fill_in 'expense_amount', with: '100'
-        #select 'expense test', from: "#expense_group_id"
         find(:css, "#expense_group_id").find(:option, 'expense test').select_option
-        #find('#expense_group_id').find(:xpath, 'option[0]').select_option
+        
     end
 
     sleep(5)
-    expect(page).to have_content 'Pending'
+    click_button 'Create Expense'
+    
+    expect(page).to have_content 'Expense was successfully created.'
     sleep(5)
   end
 
