@@ -1,7 +1,6 @@
-
 wb = xlsx_package.workbook
-wb.add_worksheet(name: "expense") do |sheet|
-  sheet.add_row ['Expense', 'Amount', 'created', 'Group' ]
+wb.add_worksheet(name: 'expense') do |sheet|
+  sheet.add_row %w[Expense Amount created Group]
   @expenses_d.each do |expense|
     sheet.add_row [expense.name, expense.amount, expense.created_at, expense.group.name]
   end

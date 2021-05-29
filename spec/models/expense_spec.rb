@@ -1,15 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Expense, type: :model do
-  #pending "add some examples to (or delete) #{__FILE__}"
+  # pending "add some examples to (or delete) #{__FILE__}"
   let(:user1) { User.create(name: 'user_tes1', email: 'mail1@mail.com', password: 'password') }
   let(:group1) { user1.groups.create(name: 'expense test') }
-  let(:expense1) { Expense.create(name: 'expense test 1', amount: 100 , author: user1) }
+  let(:expense1) { Expense.create(name: 'expense test 1', amount: 100, author: user1) }
   let(:expense2) { Expense.create(name: 'expense test 2', amount: 100, author: user1) }
   let(:expense3) { Expense.create(name: 'expense test 3', amount: 100, author: user1) }
   let(:expense4) { Expense.create(name: 'expense test 3', amount: 100, author: user1, group: group1) }
-  
-  
+
   describe 'Can be created by user' do
     it 'Has an user without a grup' do
       expect(expense1).to be_valid
@@ -42,7 +41,7 @@ RSpec.describe Expense, type: :model do
       expense4.save
       expect(Expense.all.count).to eq 4
     end
-  end 
+  end
   describe 'Can be added into a group' do
     it 'has been saved first ' do
       expense1.save

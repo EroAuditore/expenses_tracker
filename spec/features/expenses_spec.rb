@@ -13,28 +13,26 @@ RSpec.describe 'Expense creation', type: :system do
     visit '/users/sign_in'
 
     within('#new_user') do
-        fill_in 'Email', with: 'u_test@mail.com'
-        fill_in 'Password', with: 'konohavillage'
+      fill_in 'Email', with: 'u_test@mail.com'
+      fill_in 'Password', with: 'konohavillage'
     end
-  
+
     sleep(2)
     click_button 'Log in'
-  
+
     sleep(3)
     visit '/expenses/new'
     sleep(5)
     within '.form-inputs' do
-        fill_in 'expense_name', with: 'Test expense'
-        fill_in 'expense_amount', with: '100'
-        find(:css, "#expense_group_id").find(:option, 'expense test').select_option
-        
+      fill_in 'expense_name', with: 'Test expense'
+      fill_in 'expense_amount', with: '100'
+      find(:css, '#expense_group_id').find(:option, 'expense test').select_option
     end
 
     sleep(5)
     click_button 'Create Expense'
-    
+
     expect(page).to have_content 'Expense was successfully created.'
     sleep(5)
   end
-
 end

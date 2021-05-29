@@ -1,8 +1,7 @@
-
 require 'rails_helper'
 RSpec.describe 'Sign in', type: :system do
   before :each do
-    #User.delete_all
+    # User.delete_all
     User.create(name: 'u_test', email: 'u_test@mail.com', password: 'konohavillage')
   end
 

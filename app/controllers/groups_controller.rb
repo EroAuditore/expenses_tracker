@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all.order("name asc")
+    @groups = Group.all.order('name asc')
   end
 
   # GET /groups/1 or /groups/1.json
@@ -57,10 +57,10 @@ class GroupsController < ApplicationController
     end
   end
 
-  #down load xlsx file
+  # down load xlsx file
 
   def download
-    @expenses_d = Expense.all.order("created_at desc")
+    @expenses_d = Expense.all.order('created_at desc')
     respond_to do |format|
       format.xlsx
     end

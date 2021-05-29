@@ -4,7 +4,8 @@ module ApplicationHelper
       if expense.group.image.attached?
         image_tag(expense.group.image, class: 'img-item')
       else
-        content_tag(:span, '', data: { 'feather' => 'users' }, style: 'width: 65px; height: 100px; display:block; margin:auto')
+        content_tag(:span, '', data: { 'feather' => 'users' },
+                               style: 'width: 65px; height: 100px; display:block; margin:auto')
       end
     else
       content_tag(:span, '', data: { 'feather' => 'dollar-sign' }, style: 'width: 65px; height: 100px;')
@@ -16,7 +17,8 @@ module ApplicationHelper
       image_tag(group.image, class: 'img-item')
     else
 
-      content_tag(:span, '', data: { 'feather' => 'users' }, style: 'width: 65px; height: 100px; display:block; margin:auto')
+      content_tag(:span, '', data: { 'feather' => 'users' },
+                             style: 'width: 65px; height: 100px; display:block; margin:auto')
     end
   end
 end

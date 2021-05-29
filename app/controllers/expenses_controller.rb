@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.all.order("created_at desc")
+    @expenses = Expense.all.order('created_at desc')
   end
 
   # GET /expenses/1 or /expenses/1.json
@@ -60,10 +60,10 @@ class ExpensesController < ApplicationController
   def external
     @expenses = Expense.external
   end
-  #down load xlsx file
+  # down load xlsx file
 
   def download
-    @expenses_d = Expense.all.order("created_at desc")
+    @expenses_d = Expense.all.order('created_at desc')
     respond_to do |format|
       format.xlsx
     end
@@ -75,7 +75,7 @@ class ExpensesController < ApplicationController
   def set_expense
     @expense = Expense.find(params[:id])
   end
-  
+
   # Only allow a list of trusted parameters through.
   def expense_params
     params.require(:expense).permit(:name, :amount, :user_id, :group_id)
