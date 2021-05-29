@@ -5,11 +5,9 @@ RSpec.describe 'Expense creation', type: :system do
     User.delete_all
     user1 = User.new(name: 'u_test', email: 'u_test@mail.com', password: 'konohavillage')
     user1.save
-    user1.groups.create(name: 'expense test')
-    user1.groups.create(name: 'expense test 2')
   end
 
-  it 'Can create expense' do
+  it 'Can create a group' do
     visit '/users/sign_in'
 
     within('#new_user') do
@@ -21,19 +19,16 @@ RSpec.describe 'Expense creation', type: :system do
     click_button 'Log in'
   
     sleep(3)
-    visit '/expenses/new'
+    visit '/groups/new'
     sleep(5)
     within '.form-inputs' do
-        fill_in 'expense_name', with: 'Test expense'
-        fill_in 'expense_amount', with: '100'
-        find(:css, "#expense_group_id").find(:option, 'expense test').select_option
-        
+        fill_in 'group_name', with: 'Test group'
     end
 
     sleep(5)
-    click_button 'Create Expense'
+    click_button 'Create Group'
     
-    expect(page).to have_content 'Expense was successfully created.'
+    expect(page).to have_content 'Group was successfully created.'
     sleep(5)
   end
 
