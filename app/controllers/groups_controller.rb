@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all.order('name asc')
+    @groups = Group.includes(:user).where("user_id = ?", current_user.id ).order('name asc')
   end
 
   # GET /groups/1 or /groups/1.json
@@ -60,7 +60,7 @@ class GroupsController < ApplicationController
   # down load xlsx file
 
   def download
-    @expenses_d = Expense.all.order('created_at desc')
+    @expenses_d = Expense.includes(:author).where("author_id = ?", current_user.id ).order('created_at desc')
     respond_to do |format|
       format.xlsx
     end

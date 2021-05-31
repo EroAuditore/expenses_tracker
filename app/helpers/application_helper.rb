@@ -21,4 +21,11 @@ module ApplicationHelper
                              style: 'width: 65px; height: 100px; display:block; margin:auto')
     end
   end
+
+  def total_expense
+    Expense.includes(:author).where("author_id = ?", current_user.id ).calculate(:sum, :amount)
+  end
+  def total_expense_external
+    Expense.external.includes(:author).where("author_id = ?", current_user.id ).calculate(:sum, :amount)
+  end
 end

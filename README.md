@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# **Save Your Money App**
+# **Keep track on your expenses**
 
-## Ruby app that allows you to keep track of your expenses in order to have a better money managment.
+## Ruby app that allows you to keep track of your expenses in order to have a better managment.
 
 ### This is a sneak peak of the app
 
@@ -12,33 +12,26 @@
 
 ## User profile
 
-![symo-userprofile](https://user-images.githubusercontent.com/70416006/116475692-cebf9480-a83f-11eb-8ce4-f888f2bc9bb7.png)
+![image](https://user-images.githubusercontent.com/60273425/120052790-a5d02200-bfec-11eb-9b14-1c152cb265a7.png)
 
 ## Expenses view
 
-![symo-expenses](https://user-images.githubusercontent.com/70416006/116475679-ccf5d100-a83f-11eb-90e8-51255b44e5e7.png)
-
-## Navigation
-
-![symo-nav](https://user-images.githubusercontent.com/70416006/116475688-ce26fe00-a83f-11eb-8e82-c3c1bc6c9a41.png)
+![image](https://user-images.githubusercontent.com/60273425/120052816-cdbf8580-bfec-11eb-8bea-5ce12bf585ec.png)
 
 ## Groups view
 
-![symo-groups](https://user-images.githubusercontent.com/70416006/116475684-ce26fe00-a83f-11eb-94c6-0256f26acdba.png)
-
-## Groups show
-
-![symo-groupshow](https://user-images.githubusercontent.com/70416006/116475675-cc5d3a80-a83f-11eb-9726-938b3b20ef43.png)
+![image](https://user-images.githubusercontent.com/60273425/120052953-61915180-bfed-11eb-9634-f20bf16dbaa7.png)
 
 ### Description
 
-    This is an expense managment application that you can use to keep track of your daily, weekly or monthly
-    expenses with a top of $2000 USD, and the great part is that you can use it with your family and friends
+    This is an expense management application that you can use to keep track of your daily, weekly, or monthly
+    expenses and the great part is that you can use it with your family and friends
     so if you got a family trip or want to launch a big party with your friends just send them the app and
     start saving money.
 
-    -If user don't select an image when signing up, app will automaticaly assing one
-    -If user don't select an image when creating a group, app will automaticaly assing one
+    -If the user doesn't select an image when creating a group, the app will automatically assign one
+
+    -Extra feature you can download in excel file all your expenses if you want are planning to something more sophisticated
 
 ### Schema
 
@@ -51,8 +44,7 @@ To run this app on your local enviroment or web browser, simply follow the steps
 ## Prerequisites
 
 - Internet connection
-- Install the ruby programming language 3.0.0 [Click here](https://www.ruby-lang.org/en/documentation/installation/)
-- Install rails framewrok 6.0.0 [Click here](https://rubyonrails.org/)
+- Install the ruby programming language 2.7.2 [Click here](https://www.ruby-lang.org/en/documentation/installation/)
 - Install Git [Click here](https://git-scm.com/)
 - Install code editor with a terminal(Visual Studio Code Editor recommended [Click here](https://code.visualstudio.com/))
 
@@ -61,7 +53,7 @@ To run this app on your local enviroment or web browser, simply follow the steps
 #### Local enviroment
 
 - Open your terminal
-- Clone this repo on your local machine by running `git clone https://github.com/Diegodsha/Save-Your-Money.git`
+- Clone this repo on your local machine by running `git clone https://github.com/EroAuditore/expenses_tracker.git`
 - Cd into the folder you just cloned
 - Run `Bundle install` in your terminal to install all the required gems
 - Run `yarn install` to install js dependencies
@@ -74,8 +66,8 @@ To run this app on your local enviroment or web browser, simply follow the steps
 ## Live Demo
 
 - TIP: This is a mobile app so for full experience access it from your phone or set your web browser into mobile view and disable touch function
-- Simply access this link [Save-Your-Money-Live](https://symoney.herokuapp.com/log)
-- TO GET A SMILE ON YOUR FACE CREATE A NEW USER WITHOU ANY IMAGE
+- Simply access this link [Expense-tracker](https://eroextracker.herokuapp.com/expenses)
+
 - You can also access a test user - username: Diego
 - [Presentation-video](https://www.loom.com/share/c442ee053c874ae898561d98663caefe?sharedAppSource=personal_library)
 
@@ -86,18 +78,17 @@ To run this app on your local enviroment or web browser, simply follow the steps
 
 ## Built With
 
-- Ruby programming language 3.0.0
-- Ruby on rails framework 6.1.3.1
-- Cloudinary for img uploads
+- Ruby on rails framework 2.7.2
+- Active storage for img uploads
 - Visual Studio Code Editor
 
 ## Author
 
-### Diego Hernandez
+### Eduardo Rodriguez
 
-- GitHub: [@Diegodsha](https://github.com/Diegodsha)
-- Twitter: [@diegohdezchimo](https://twitter.com/diegohdezchimo)
-- LinkedIn: [diegoshdezaguilar](https://www.linkedin.com/in/diegoshdezaguilar/)
+- GitHub: [@EroAuditore](https://github.com/EroAuditore)
+- Twitter: [@EroAuditore](https://twitter.com/EroAuditore)
+- LinkedIn: [EroAuditore](https://www.linkedin.com/in/EroAuditore/)
 
 ## Acknowledgements
 

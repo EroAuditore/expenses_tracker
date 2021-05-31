@@ -10,7 +10,7 @@
   <div class="card">
     <div class="row p-2">
       <div class="col"><h5 class="card-title"> Total: </h5></div>
-      <div class="col"><h5 class="card-title"> <%= number_to_currency(Expense.calculate(:sum, :amount)) %></h5></div>
+      <div class="col"><h5 class="card-title"> <%= number_to_currency(total_expense) %></h5></div>
       <div class="col"><%= 
             link_to 'Download',
             download_expenses_path(format: :xlsx),
