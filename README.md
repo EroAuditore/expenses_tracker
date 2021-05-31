@@ -68,8 +68,7 @@ To run this app on your local enviroment or web browser, simply follow the steps
 - TIP: This is a mobile app so for full experience access it from your phone or set your web browser into mobile view and disable touch function
 - Simply access this link [Expense-tracker](https://eroextracker.herokuapp.com/expenses)
 
-- You can also access a test user - username: Diego
-- [Presentation-video](https://www.loom.com/share/c442ee053c874ae898561d98663caefe?sharedAppSource=personal_library)
+- [Presentation-video](https://www.loom.com/share/59aadc3b5af2469f8d38a8b8e0427233)
 
 ## How to run the test suite
 

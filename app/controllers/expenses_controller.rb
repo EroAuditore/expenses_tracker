@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.includes(:author).where("author_id = ?", current_user.id ).order('created_at desc')
+    @expenses = Expense.includes(:author).where('author_id = ?', current_user.id).order('created_at desc')
   end
 
   # GET /expenses/1 or /expenses/1.json
@@ -58,12 +58,12 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def external
-    @expenses = Expense.external.includes(:author).where("author_id = ?", current_user.id ).order('created_at desc')
+    @expenses = Expense.external.includes(:author).where('author_id = ?', current_user.id).order('created_at desc')
   end
   # down load xlsx file
 
   def download
-    @expenses_d = Expense.includes(:author).where("author_id = ?", current_user.id ).order('created_at desc')
+    @expenses_d = Expense.includes(:author).where('author_id = ?', current_user.id).order('created_at desc')
     respond_to do |format|
       format.xlsx
     end
