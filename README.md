@@ -97,4 +97,4 @@ To run this app on your local enviroment or web browser, simply follow the steps
 
 ## License
 
-- This project is [MIT](https://github.com/Diegodsha/Save-Your-Money/blob/main/LICENSE) licensed.
+- This project is [MIT](https://github.com/EroAuditore/expenses_tracker/blob/feature/expense/LICENSE) licensed.
