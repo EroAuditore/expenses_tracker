@@ -1,6 +1,6 @@
 module ApplicationHelper
   def render_image(expense)
-    if expense.group_id?
+    if expense.group.id?
       if expense.group.image.attached?
         image_tag(expense.group.image, class: 'img-item')
       else
