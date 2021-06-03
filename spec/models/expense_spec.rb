@@ -26,7 +26,6 @@ RSpec.describe Expense, type: :model do
 
   describe 'Can be separated into external and all' do
     it 'is external if doesnt have group' do
-      
       expense1.save
       expense2.save
       expense3.save
@@ -54,12 +53,12 @@ RSpec.describe Expense, type: :model do
 
   describe 'its not valid if' do
     it 'ammount is not numeric' do
-      expense1.amount = "Hello"
+      expense1.amount = 'Hello'
       expense1.save
       expect(expense1).not_to be_valid
     end
     it 'name is not present' do
-      expense1.name = ""
+      expense1.name = ''
       expense1.save
       expect(expense1).not_to be_valid
     end

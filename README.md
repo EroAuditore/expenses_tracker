@@ -59,6 +59,28 @@ To run this app on your local enviroment or web browser, simply follow the steps
 - Run `yarn install` to install js dependencies
 - Run `rails db:migrate` to do the migrations
 - Run `rails s` to initialize rails local server
+- App uses [Figaro](https://github.com/laserlemon/figaro) to manage connections to add your own authentication
+
+Figaro installation:
+
+```bash
+$ bundle exec figaro install
+```
+
+This creates a commented `config/application.yml` file and adds it to your
+`.gitignore`. Add your own configuration to this file and you're done!
+
+### Example
+
+Given the following configuration file:
+
+```yaml
+# config/application.yml
+
+pusher_app_id: "2954"
+pusher_key: "7381a978f7dd7f9a1117"
+pusher_secret: "abdc3b896a0ffb85d373"
+
 - Open your browser and type `http://localhost:3000` to enter the app
 
 #### With internet connection
@@ -98,3 +120,4 @@ To run this app on your local enviroment or web browser, simply follow the steps
 ## License
 
 - This project is [MIT](https://github.com/EroAuditore/expenses_tracker/blob/feature/expense/LICENSE) licensed.
+```

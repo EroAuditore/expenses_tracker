@@ -11,6 +11,5 @@ RSpec.describe User, type: :model do
     it 'Is invalid if name, email or password are not present' do
       expect(invalid_user).to_not be_valid
     end
-    
   end
 end
