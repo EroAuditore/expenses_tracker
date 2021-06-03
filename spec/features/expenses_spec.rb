@@ -26,7 +26,7 @@ RSpec.describe 'Expense creation', type: :system do
     within '.form-inputs' do
       fill_in 'expense_name', with: 'Test expense'
       fill_in 'expense_amount', with: '100'
-      find(:css, '#expense_group_id').find(:option, 'expense test').select_option
+      find(:css, '#expense_group_ids').find(:option, 'expense test').select_option
     end
 
     sleep(5)

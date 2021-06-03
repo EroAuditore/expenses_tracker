@@ -51,4 +51,17 @@ RSpec.describe Expense, type: :model do
       expect(expense1).to be_valid
     end
   end
+
+  describe 'its not valid if' do
+    it 'ammount is not numeric' do
+      expense1.amount = "Hello"
+      expense1.save
+      expect(expense1).not_to be_valid
+    end
+    it 'name is not present' do
+      expense1.name = ""
+      expense1.save
+      expect(expense1).not_to be_valid
+    end
+  end
 end
