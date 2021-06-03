@@ -1,0 +1,6 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: 'expense') do |sheet|
+  @expenses_d.each do |expense|
+    sheet.add_row [expense.name, expense.amount]
+  end
+end

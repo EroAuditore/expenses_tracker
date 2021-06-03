@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+
+<article>
+  <h3>
+    Expenses
+  </h3>
+  
+  <div class="row mb-4">
+  <div class="card">
+    <div class="row ">
+      <div class="col-6"><h5 class="card-title"> Total: </h5></div>
+      <div class="col-6"><h5 class="card-title"> <%= number_to_currency(total_expense_external) %></h5></div>
+    </div>
+  </div>
+    
+  </div>
+  <ul class="list-unstyled"> 
+    <%= render partial: 'expenses/card'%>
+  </ul>
+</article>
+
+<br>
+
+<%= link_to 'New Expense', new_expense_path, class: "btn btn-success w-100" %>

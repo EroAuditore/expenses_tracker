@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<div class="card mb-3">
+  <div class="row g-0 d-flex">
+    <div class="col-4 ">
+    <%= render_image_group(@group) %>
+      
+    </div>
+    <div class="col-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= @group.name %></h5>
+        <p class="card-text"><%= @group.user.name %></p>
+        <p class="card-text"><small class="text-muted"><%= @group.created_at.strftime("%Y/%m/%d") %></small></p>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<article>
+  <h3>
+    Expenses
+  </h3>
+
+  
+  <div class="row mb-4">
+  <div class="card">
+    <div class="row ">
+      <div class="col-6"><h5 class="card-title"> Total: </h5></div>
+      <div class="col-6"><h5 class="card-title"> <%= number_to_currency(@expenses.calculate(:sum, :amount)) %></h5></div>
+    </div>
+  </div>
+    
+  </div>
+  <ul class="list-unstyled"> 
+    <%= render partial: 'expenses/card'%>
+  </ul>
+</article>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>
