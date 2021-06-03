@@ -1,6 +1,6 @@
 module ApplicationHelper
   def render_image(expense)
-    if expense.group.id?
+    if expense.groups.exists?
       if expense.group.image.attached?
         image_tag(expense.group.image, class: 'img-item')
       else
@@ -16,7 +16,6 @@ module ApplicationHelper
     if group.image.attached?
       image_tag(group.image, class: 'img-item')
     else
-
       content_tag(:span, '', data: { 'feather' => 'users' },
                              style: 'width: 65px; height: 100px; display:block; margin:auto')
     end
@@ -27,6 +26,6 @@ module ApplicationHelper
   end
 
   def total_expense_external
-    Expense.external.includes(:author).where('author_id = ?', current_user.id).calculate(:sum, :amount)
+    Expense.includes(:author).where('author_id = ?', current_user.id).calculate(:sum, :amount)
   end
 end
