@@ -1,8 +1,8 @@
 module ApplicationHelper
   def render_image(expense)
     if expense.groups.exists?
-      if expense.group.image.attached?
-        image_tag(expense.group.image, class: 'img-item')
+      if expense.groups.first.image.attached?
+        image_tag(expense.groups.first.image, class: 'img-item')
       else
         content_tag(:span, '', data: { 'feather' => 'users' },
                                style: 'width: 65px; height: 100px; display:block; margin:auto')
