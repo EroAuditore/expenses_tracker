@@ -7,7 +7,7 @@ RSpec.describe Expense, type: :model do
   let(:expense1) { Expense.create(name: 'expense test 1', amount: 100, author: user1) }
   let(:expense2) { Expense.create(name: 'expense test 2', amount: 100, author: user1) }
   let(:expense3) { Expense.create(name: 'expense test 3', amount: 100, author: user1) }
-  let(:expense4) { Expense.create(name: 'expense test 3', amount: 100, author: user1, group: group1) }
+  let(:expense4) { Expense.create(name: 'expense test 3', amount: 100, author: user1) }
 
   describe 'Can be created by user' do
     it 'Has an user without a grup' do
@@ -26,10 +26,12 @@ RSpec.describe Expense, type: :model do
 
   describe 'Can be separated into external and all' do
     it 'is external if doesnt have group' do
+      
       expense1.save
       expense2.save
       expense3.save
       expense4.save
+      expense4.groups << group1
       expect(Expense.external.count).to eq 3
     end
   end
@@ -45,7 +47,7 @@ RSpec.describe Expense, type: :model do
   describe 'Can be added into a group' do
     it 'has been saved first ' do
       expense1.save
-      expense1.group = group1
+      expense1.groups << group1
       expect(expense1).to be_valid
     end
   end
