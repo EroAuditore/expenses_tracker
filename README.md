@@ -82,6 +82,7 @@ pusher_key: "7381a978f7dd7f9a1117"
 pusher_secret: "abdc3b896a0ffb85d373"
 
 - Open your browser and type `http://localhost:3000` to enter the app
+```
 
 #### With internet connection
 
@@ -120,4 +121,7 @@ pusher_secret: "abdc3b896a0ffb85d373"
 ## License
 
 - This project is [MIT](https://github.com/EroAuditore/expenses_tracker/blob/feature/expense/LICENSE) licensed.
+
+```
+
 ```
